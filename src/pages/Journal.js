@@ -48,7 +48,11 @@ function JournalOne() {
   const cleanedById = Object.values(data)[0].map((x) => x.cleaned)[0];
   
   if (Object.values(data).map((x) => x.length === 0)[0]) {
-    return <MaybeCleanJournal />;
+    return (
+      <div>
+        <p>Finished</p>
+      </div>
+      )
   } else {
   return (
     <div>
