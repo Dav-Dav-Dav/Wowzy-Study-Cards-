@@ -42,8 +42,22 @@ function JournalOne() {
   if (error) return `Error! ${error}`;
 
 
-  const reframeById = Object.values(data)[0].map((x) => x.reframe)[0];
-  const situationById = Object.values(data)[0].map((x) => x.situation)[0];
+   const reframeById = Object.values(data)[0].map((x) => x.reframe)[0].split('\n').map((value, index) => {
+    return (
+      <span key={index}>
+        {value}
+        <br />
+      </span>
+    );
+  })
+  const situationById = Object.values(data)[0].map((x) => x.situation)[0].split('\n').map((value, index) => {
+    return (
+      <span key={index}>
+        {value}
+        <br />
+      </span>
+    );
+  })
   const idById = Object.values(data)[0].map((x) => x.id)[0];
   const cleanedById = Object.values(data)[0].map((x) => x.cleaned)[0];
   
